@@ -15,7 +15,7 @@ const content = "Header1,Header2\nContent1,Content2";
 
 export default class App extends Component {
 
-  fileUsesTxtAsEnding = async () => {
+  uploadNoContent = async () => {
     const path = FileSystem.DocumentDirectoryPath + "/MyFile.csv";
     await FileSystem.writeFile(path,content);
     await Share.open({
@@ -43,7 +43,7 @@ export default class App extends Component {
         <Text style={styles.welcome}>Welcome to React Native!</Text>
 
         <Text style={styles.instructions}>Fails with "Request contained no data" </Text>
-        <Button onPress={this.fileUsesTxtAsEnding} title="Share file from filepath" />
+        <Button onPress={this.uploadNoContent} title="Share file from filepath" />
 
         <Text style={styles.instructions}>Fails to interpret extension (shows up as .null)</Text>
         <Button onPress={this.shareWithBase64} title="Share using base64 data url" />
