@@ -19,7 +19,7 @@ export default class App extends Component {
     const path = FileSystem.DocumentDirectoryPath + "/MyFile.csv";
     await FileSystem.writeFile(path,content);
     await Share.open({
-      url: path,
+      url: "file://" + path,
       // type: "text/csv" // Makes no difference
     });
     await FileSystem.unlink(path);
@@ -42,7 +42,7 @@ export default class App extends Component {
       <View style={styles.container}>
         <Text style={styles.welcome}>Welcome to React Native!</Text>
 
-        <Text style={styles.instructions}>Fails to interpret extension (shows up as .txt) and creates a new file with url as content</Text>
+        <Text style={styles.instructions}>Fails with "Request contained no data" </Text>
         <Button onPress={this.fileUsesTxtAsEnding} title="Share file from filepath" />
 
         <Text style={styles.instructions}>Fails to interpret extension (shows up as .null)</Text>
