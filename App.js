@@ -7,16 +7,9 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, Button} from 'react-native';
+import { StyleSheet, Text, View, Button} from 'react-native';
 import Share from 'react-native-share';
 import FileSystem from 'react-native-fs';
-
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
-  android:
-    'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
 
 const content = "Header1,Header2\nContent1,Content2";
 
